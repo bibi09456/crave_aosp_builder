@@ -425,6 +425,8 @@ jobs:
         
         # Sync the repositories
         /opt/crave/resync.sh  && \
+        repo forall -c git lfs pull; \
+        rm -rf kernel/asus/sdm660/KernelSU/userspace; \
         
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
